@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:udemy_clone/firebase_options.dart';
@@ -20,6 +21,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home:  StreamBuilder(
+        stream: FirebaseAuth.instance.authStateChanges(),
         builder: (context,usersnapshot){
           if(usersnapshot.hasData){
             return SplashScreen();
