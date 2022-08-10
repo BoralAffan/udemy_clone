@@ -24,8 +24,13 @@ class _LoginScreenState extends State<LoginScreen> {
         idToken: accountAuthentication.idToken);
 
     await FirebaseAuth.instance.signInWithCredential(credential);
+    
+    
 
-    Navigator.pushReplacement(context, PageTransition(child: SplashScreen(), type: PageTransitionType.bottomToTop));
+    Navigator.pushReplacement(
+        context,
+        PageTransition(
+            child: SplashScreen(), type: PageTransitionType.bottomToTop));
   }
 
   Widget build(BuildContext context) {
